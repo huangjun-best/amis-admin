@@ -1,0 +1,101 @@
+{
+  "status": 0,
+  "msg": "",
+  "data": {
+    "pages": [
+      {
+        "label": "Home",
+        "url": "/",
+        "redirect": "/index/1"
+      },
+      {
+        "children": [
+          {
+            "label": "主页",
+            "url": "index",
+            "schema": {
+              "type": "page",
+              "title": "主页",
+              "body": "主页"
+            },
+            "children": [
+              {
+                "label": "控制台",
+                "url": "2",
+                "schema": {
+                  "type": "page",
+                  "title": "页面A-2",
+                  "body": "页面A-2"
+                }
+              },
+              {
+                "label": "实时取票",
+                "url": "3",
+                "schema": {
+                  "type": "page",
+                  "title": "页面A-3",
+                  "body": "页面A-3"
+                }
+              }
+            ]
+          },
+          {
+            "label": "系统监控",
+            "url": "/crud",
+            "icon": "fa fa-cube",
+            "children": [
+              {
+                "label": "任务阶段成功率",
+                "icon": "fa fa-list",
+                "schemaApi": "get:/pages/crud-list.json"
+              },
+              {
+                "label": "任务数量分布",
+                "icon": "fa fa-list",
+                "schemaApi": "get:/pages/demo-list.json"
+              },
+              {
+                "label": "错误监控",
+                "icon": "fa fa-plus",
+                "schemaApi": "get:/pages/crud-new.json"
+              },
+              {
+                "label": "线程监控",
+                "schemaApi": "get:/pages/crud-view.json"
+              }
+            ]
+          },
+          {
+            "label": "列表示例",
+            "url": "/crud",
+            "icon": "fa fa-cube",
+            "children": [
+              {
+                "label": "列表",
+                "url": "/demo/list",
+                "icon": "fa fa-list",
+                "schemaApi": "get:/pages/demo-list.json"
+              },
+              {
+                "label": "新增",
+                "url": "/crud/new",
+                "icon": "fa fa-plus",
+                "schemaApi": "get:/pages/crud-new.json"
+              },
+              {
+                "label": "查看",
+                "url": "/crud/:id",
+                "schemaApi": "get:/pages/crud-view.json"
+              },
+              {
+                "label": "修改",
+                "url": "/crud/:id/edit",
+                "schemaApi": "get:/pages/crud-edit.json"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

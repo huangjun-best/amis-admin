@@ -1,0 +1,70 @@
+{
+  "type": "page",
+  "title": "个税管理",
+  "body": [
+    {
+      "type": "crud",
+      "api": {
+        "method": "get",
+        "url": "http://localhost:7002/ft/incometax/getList",
+        "data": {
+          "&": "$$",
+          "limit": "${perPage}"
+        }
+      },
+      "columns": [
+        {
+          "name": "id",
+          "label": "ID",
+          "type": "text"
+        },
+        {
+          "name": "taxNo",
+          "label": "税号",
+          "type": "text"
+        },
+        {
+          "type": "text",
+          "label": "已用授权数",
+          "name": "authCount"
+        },
+        {
+          "type": "mapping",
+          "label": "注册登记",
+          "name": "submitStatus",
+          "map": {
+            "SUCCESS": "<span class=\"cxd-Button cxd-Button--primary cxd-Button--sm\">成功</span>",
+            "FAILED": "<span class=\"cxd-Button cxd-Button--danger cxd-Button--sm\">失败</span>"
+          }
+        }
+      ],
+      "bulkActions": [],
+      "itemActions": [],
+      "perPageAvailable": [
+        10
+      ],
+      "messages": {},
+      "filter": {
+        "title": "查询条件",
+        "body": [
+          {
+            "type": "input-month",
+            "name": "period",
+            "label": "期间",
+            "value": "",
+            "minDate": "",
+            "maxDate": "",
+            "format": "yyyy-MM"
+          },
+          {
+            "type": "input-text",
+            "label": "税号",
+            "name": "taxNo",
+            "placeholder": "请输入税号"
+          }
+        ]
+      },
+      "defaultParams": {}
+    }
+  ]
+}
